@@ -1,0 +1,1270 @@
+{
+	"info": {
+		"_postman_id": "0adac681-1cb3-430f-9d06-92f4dd7e0677",
+		"name": "nestjs-api-movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22932802"
+	},
+	"item": [
+		{
+			"name": "Quản Lý Đặt Vé",
+			"item": [
+				{
+					"name": "đặt vé",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tai_khoan\": 5002, \r\n    \"ma_lich_chieu\": 2005, \r\n    \"danhSachGhe\": [\r\n        {\"ma_ghe\": 4019},\r\n        {\"ma_ghe\": 4020}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/quan-ly-dat-ve/dat-ve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"quan-ly-dat-ve",
+								"dat-ve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách phòng vé",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/quan-ly-dat-ve/lay-danh-sach-phong-ve/2001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"quan-ly-dat-ve",
+								"lay-danh-sach-phong-ve",
+								"2001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tạo lịch chiếu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phim\": 10005,\r\n    \"ma_rap\": 518,\r\n    \"ngay_gio_chieu\": \"2023-04-17 11:30:00\",\r\n    \"gia_ve\": 90000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-dat-ve/tao-lich-chieu",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-dat-ve",
+								"tao-lich-chieu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quản Lý Người Dùng",
+			"item": [
+				{
+					"name": "lấy danh sách loại người dùng",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6ImFua2FrYXNpMTFAZ21haWwuY29tIiwic29fZHQiOiIwMTIzNDU2Nzg5IiwibWF0X2toYXUiOiIkMmIkMTAkMi51MUFJRVI1WVM2Q21nMy5XYjM0T0hUc1gxZ1d6aFR5cmYxMDVUOG5mU3FKcldaQ0ZBVDIiLCJsb2FpX25ndW9pX2R1bmciOiJBRE1JTiIsImFuaF9kYWlfZGllbiI6InN0cmluZyJ9LCJpYXQiOjE2ODE3MTM2NTUsImV4cCI6MTY4MTcxMzk1NX0.R7QqQeP_RVQpq4CMQpab7ZBoOGJCUMpW0vFUAB2wCVY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "jwt",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNywiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6InZhbmExMkBnbWFpbC5jb20iLCJzb19kdCI6IjAxMjM0NTY3ODkiLCJtYXRfa2hhdSI6IiQyYiQxMCRHVDQvRmpELlM0VDhuYnJ4S0ZGY2tPNzN4NVZrSXhNcDhXMVAzMU92RVNBR1NpeGVxWDV5eSIsImxvYWlfbmd1b2lfZHVuZyI6IkNMSUVOVCIsImFuaF9kYWlfZGllbiI6Imh0dHBzOi8vcGljc3VtLnBob3Rvcy8yMDAifSwiaWF0IjoxNjgxNjUxODk0LCJleHAiOjE2ODE2NTIxOTR9.2B4PwQGMkaqqfxSqMW56qndBLo97-jZw_vQPI_rcVKY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/lay-danh-sach-loai-nguoi-dung",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"lay-danh-sach-loai-nguoi-dung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "đăng nhập",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ankakasi113@gmail.com\",\r\n    \"mat_khau\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/dang-nhap",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"dang-nhap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "đăng ký",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ho_ten\": \"le van a\",\r\n    \"email\": \"ankakasi11@gmail.com\",\r\n    \"so_dt\": \"0123456789\",\r\n    \"mat_khau\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/dang-ky",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"dang-ky"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách người dùng",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6ImFua2FrYXNpMTFAZ21haWwuY29tIiwic29fZHQiOiIwMTIzNDU2Nzg5IiwibWF0X2toYXUiOiIkMmIkMTAkMi51MUFJRVI1WVM2Q21nMy5XYjM0T0hUc1gxZ1d6aFR5cmYxMDVUOG5mU3FKcldaQ0ZBVDIiLCJsb2FpX25ndW9pX2R1bmciOiJBRE1JTiIsImFuaF9kYWlfZGllbiI6InN0cmluZyJ9LCJpYXQiOjE2ODE3NzIzNTcsImV4cCI6MTY4MTc3MjY1N30.Om6udZ66eTOca_oNobos3QAV786bJZ8WNz4MRgdaPjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/lay-danh-sach-nguoi-dung?tuKhoa=a",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"lay-danh-sach-nguoi-dung"
+							],
+							"query": [
+								{
+									"key": "tuKhoa",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách người dùng phân trang",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6ImFua2FrYXNpMTFAZ21haWwuY29tIiwic29fZHQiOiIwMTIzNDU2Nzg5IiwibWF0X2toYXUiOiIkMmIkMTAkMi51MUFJRVI1WVM2Q21nMy5XYjM0T0hUc1gxZ1d6aFR5cmYxMDVUOG5mU3FKcldaQ0ZBVDIiLCJsb2FpX25ndW9pX2R1bmciOiJBRE1JTiIsImFuaF9kYWlfZGllbiI6InN0cmluZyJ9LCJpYXQiOjE2ODE3NzMzNDYsImV4cCI6MTY4MTc3MzY0Nn0.Y-AKUgm3Sd2MYwUrE9jeEqrBFAxTu2sCrnVN0_4D2Kg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/lay-danh-sach-nguoi-dung-phan-trang",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"lay-danh-sach-nguoi-dung-phan-trang"
+							],
+							"query": [
+								{
+									"key": "tuKhoa",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "soTrang",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "soPhanTuTrenTrang",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tìm kiếm người dùng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/tim-kiem-nguoi-dung?tuKhoa=an",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"tim-kiem-nguoi-dung"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "tuKhoa",
+									"value": "an"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tìm kiếm người dùng phân trang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/tim-kiem-nguoi-dung-phan-trang?tuKhoa=a&soTrang=2&soPhanTuTrenTrang=3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"tim-kiem-nguoi-dung-phan-trang"
+							],
+							"query": [
+								{
+									"key": "tuKhoa",
+									"value": "a"
+								},
+								{
+									"key": "soTrang",
+									"value": "2"
+								},
+								{
+									"key": "soPhanTuTrenTrang",
+									"value": "3"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "thêm người dùng",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ho_ten\": \"le van a\",\r\n    \"email\": \"vana12222@gmail.com\",\r\n    \"so_dt\": \"0123456789\",\r\n    \"mat_khau\": \"1234\",\r\n    \"loai_nguoi_dung\": \"ADMIN\",\r\n    \"anh_dai_dien\": \"https://picsum.photos/300/500\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/them-nguoi-dung",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"them-nguoi-dung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật người dùng",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6InZhbmExQGdtYWlsLmNvbSIsInNvX2R0IjoiMDEyMzQ1Njc4OSIsIm1hdF9raGF1IjoiJDJiJDEwJC5qMEdNTXZzaXJsUzBZaGFiSVc4ZWU2b0lRYktXejhhanE0WTNZS1FkbVU2MHR5cEMxQUE2IiwibG9haV9uZ3VvaV9kdW5nIjoiQ0xJRU5UIiwiYW5oX2RhaV9kaWVuIjoiaHR0cHM6Ly9waWNzdW0ucGhvdG9zLzIwMCJ9LCJpYXQiOjE2ODE1NjE5MTIsImV4cCI6MTY4MTU2MjIxMn0.hkiVdjGz7N1LpFjwnZFZSaveSUynqmcaXny2wokuTVo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ho_ten\": \"le van a\",\r\n    \"email\": \"ankakasi11@gmail.com\",\r\n    \"so_dt\": \"0123456789\",\r\n    \"mat_khau\": \"1234\",\r\n    \"loai_nguoi_dung\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/cap-nhat-nguoi-dung",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"cap-nhat-nguoi-dung"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật ảnh đại diện người dùng",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6InZhbmExQGdtYWlsLmNvbSIsInNvX2R0IjoiMDEyMzQ1Njc4OSIsIm1hdF9raGF1IjoiJDJiJDEwJC5qMEdNTXZzaXJsUzBZaGFiSVc4ZWU2b0lRYktXejhhanE0WTNZS1FkbVU2MHR5cEMxQUE2IiwibG9haV9uZ3VvaV9kdW5nIjoiQ0xJRU5UIiwiYW5oX2RhaV9kaWVuIjoiaHR0cHM6Ly9waWNzdW0ucGhvdG9zLzIwMCJ9LCJpYXQiOjE2ODE1NjE5MTIsImV4cCI6MTY4MTU2MjIxMn0.hkiVdjGz7N1LpFjwnZFZSaveSUynqmcaXny2wokuTVo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "anhDaiDien",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Pictures/Saved Pictures/avatar.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/cap-nhat-anh-dai-dien/5012",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"cap-nhat-anh-dai-dien",
+								"5012"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xóa người dùng",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6InZhbmExQGdtYWlsLmNvbSIsInNvX2R0IjoiMDEyMzQ1Njc4OSIsIm1hdF9raGF1IjoiJDJiJDEwJC5qMEdNTXZzaXJsUzBZaGFiSVc4ZWU2b0lRYktXejhhanE0WTNZS1FkbVU2MHR5cEMxQUE2IiwibG9haV9uZ3VvaV9kdW5nIjoiQ0xJRU5UIiwiYW5oX2RhaV9kaWVuIjoiaHR0cHM6Ly9waWNzdW0ucGhvdG9zLzIwMCJ9LCJpYXQiOjE2ODE1NjE5MTIsImV4cCI6MTY4MTU2MjIxMn0.hkiVdjGz7N1LpFjwnZFZSaveSUynqmcaXny2wokuTVo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ho_ten\": \"le van a\",\r\n    \"email\": \"vana1222@gmail.com\",\r\n    \"so_dt\": \"0123456789\",\r\n    \"mat_khau\": \"1234\",\r\n    \"loai_nguoi_dung\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-nguoi-dung/xoa-nguoi-dung/5005",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-nguoi-dung",
+								"xoa-nguoi-dung",
+								"5005"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quản Lý Phim",
+			"item": [
+				{
+					"name": "lấy danh sách Banner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/lay-danh-sach-banner",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"lay-danh-sach-banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách phim",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/lay-danh-sach-phim?maNhom=GP03&tenPhim=",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"lay-danh-sach-phim"
+							],
+							"query": [
+								{
+									"key": "maNhom",
+									"value": "GP03"
+								},
+								{
+									"key": "tenPhim",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách phim phân trang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/lay-danh-sach-phim-phan-trang?maNhom=GP03&tenPhim=T&soTrang=1&soPhanTuTrenTrang=5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"lay-danh-sach-phim-phan-trang"
+							],
+							"query": [
+								{
+									"key": "maNhom",
+									"value": "GP03"
+								},
+								{
+									"key": "tenPhim",
+									"value": "T"
+								},
+								{
+									"key": "soTrang",
+									"value": "1"
+								},
+								{
+									"key": "soPhanTuTrenTrang",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách phim theo ngày",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/lay-danh-sach-phim-theo-ngay?maNhom=GP03&tenPhim=tom&soTrang=1&soPhanTuTrenTrang=10&tuNgay=2023-03-09 00:00:00&denNgay=2023-03-11 00:00:00",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"lay-danh-sach-phim-theo-ngay"
+							],
+							"query": [
+								{
+									"key": "maNhom",
+									"value": "GP03"
+								},
+								{
+									"key": "tenPhim",
+									"value": "tom"
+								},
+								{
+									"key": "soTrang",
+									"value": "1"
+								},
+								{
+									"key": "soPhanTuTrenTrang",
+									"value": "10"
+								},
+								{
+									"key": "tuNgay",
+									"value": "2023-03-09 00:00:00"
+								},
+								{
+									"key": "denNgay",
+									"value": "2023-03-11 00:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "thêm phim",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_phim\": \"Tên phim\",\r\n    \"bi_danh\": \"Bi danh\",\r\n    \"trailer\": \"Link trailer\",\r\n    \"hinh_anh\": \"Link hình ảnh\",\r\n    \"mo_ta\": \"Mô tả\",\r\n    \"ma_nhom\": \"GP01\",\r\n    \"ngay_khoi_chieu\": \"2023-04-15 10:00:00\",\r\n    \"danh_gia\": 10,\r\n    \"hot\": true,\r\n    \"dang_chieu\": true,\r\n    \"sap_chieu\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/them-phim",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"them-phim"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật phim",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phim\": 10051,\r\n    \"ten_phim\": \"Doraemon\",\r\n    \"bi_danh\": \"doraemon\",\r\n    \"trailer\": \"Link trailer\",\r\n    \"hinh_anh\": \"Link hình ảnh\",\r\n    \"mo_ta\": \"Mô tả\",\r\n    \"ma_nhom\": \"GP01\",\r\n    \"ngay_khoi_chieu\": \"2023-04-15 10:00:00\",\r\n    \"danh_gia\": 10,\r\n    \"hot\": true,\r\n    \"dang_chieu\": true,\r\n    \"sap_chieu\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/cap-nhat-phim",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"cap-nhat-phim"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xóa phim",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6ImFua2FrYXNpMTFAZ21haWwuY29tIiwic29fZHQiOiIwMTIzNDU2Nzg5IiwibWF0X2toYXUiOiIkMmIkMTAkMi51MUFJRVI1WVM2Q21nMy5XYjM0T0hUc1gxZ1d6aFR5cmYxMDVUOG5mU3FKcldaQ0ZBVDIiLCJsb2FpX25ndW9pX2R1bmciOiJBRE1JTiIsImFuaF9kYWlfZGllbiI6InN0cmluZyJ9LCJpYXQiOjE2ODE3OTI3MzUsImV4cCI6MTY4MTc5MzAzNX0.wj1LQYZt_NJKnlyD-vBaVQZ0Us_H3AAcBMzxUJehxE4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/xoa-phim/10021",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"xoa-phim",
+								"10021"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "thêm banner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phim\": 102005,\r\n    \"hinh_anh\": \"Link hình ảnh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/them-banner",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"them-banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật Banner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InRhaV9raG9hbiI6NTAwNiwiaG9fdGVuIjoibGUgdmFuIGEiLCJlbWFpbCI6ImFua2FrYXNpMTFAZ21haWwuY29tIiwic29fZHQiOiIwMTIzNDU2Nzg5IiwibWF0X2toYXUiOiIkMmIkMTAkMi51MUFJRVI1WVM2Q21nMy5XYjM0T0hUc1gxZ1d6aFR5cmYxMDVUOG5mU3FKcldaQ0ZBVDIiLCJsb2FpX25ndW9pX2R1bmciOiJBRE1JTiIsImFuaF9kYWlfZGllbiI6InN0cmluZyJ9LCJpYXQiOjE2ODE3OTQ4MzQsImV4cCI6MTY4MTc5NTEzNH0.UZpm51RkKit3VwDCc8wSq0DNksaBxdc28gJ-8O9x2Uw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_banner\": 100521,\r\n    \"ma_phim\": 10001,\r\n    \"hinh_anh\": \"Link hình ảnh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/cap-nhat-banner",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"cap-nhat-banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xóa  banner",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-phim/xoa-banner/5s",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-phim",
+								"xoa-banner",
+								"5s"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quản Lý Rạp",
+			"item": [
+				{
+					"name": "lấy thông tin hệ thống rạp",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/lay-thong-tin-he-thong-rap",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"lay-thong-tin-he-thong-rap"
+							],
+							"query": [
+								{
+									"key": "maHeThongRap",
+									"value": "Star",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin cụm rạp",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/lay-thong-tin-cum-rap?maHeThongRap=cg",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"lay-thong-tin-cum-rap"
+							],
+							"query": [
+								{
+									"key": "maHeThongRap",
+									"value": "cg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin lịch chiếu hệ thống rạp",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/lay-thong-tin-lich-chieu-he-thong-rap?maNhom=GP03&maHeThongRap=CGV",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"lay-thong-tin-lich-chieu-he-thong-rap"
+							],
+							"query": [
+								{
+									"key": "maNhom",
+									"value": "GP03"
+								},
+								{
+									"key": "maHeThongRap",
+									"value": "CGV"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy thông tin lịch chiếu phim",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/lay-thong-tin-lich-chieu-phim",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"lay-thong-tin-lich-chieu-phim"
+							],
+							"query": [
+								{
+									"key": "maPhim",
+									"value": "10000",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách Ghế",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/danh-sach-ghe?maRap=502",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"danh-sach-ghe"
+							],
+							"query": [
+								{
+									"key": "maRap",
+									"value": "502"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "thêm hệ thống rạp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_he_thong_rap\": \"Rio\",\r\n    \"ten_he_thong_rap\": \"Rio Đà Nẵng\",\r\n    \"bi_danh\": \"rio-da-nang\",\r\n    \"logo\": \"https://cdn.moveek.com/storage/media/cache/square/ac254eca55b1da402e11a06f9252dc6c3db6fd70.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/them-he-thong-rap",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"them-he-thong-rap"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật hệ thống rạp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_he_thong_rap\": \"Rio\",\r\n    \"ten_he_thong_rap\": \"Rio Đà Nẵng\",\r\n    \"bi_danh\": \"rio-da-nang\",\r\n    \"logo\": \"https://cdn.moveek.com/storage/media/cache/square/ac254eca55b1da402e11a06f9252dc6c3db6fd70.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/cap-nhat-he-thong-rap",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"cap-nhat-he-thong-rap"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "thêm hệ cụm rạp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_cum_rap\": \"Rio Đà Nẵng\",\r\n    \"dia_chi\": \"403 Tôn Đức Thắng - P. Hòa Minh - Q.Liên Chiểu - TP. Đà Nẵng\",\r\n    \"ma_he_thong_rap\": \"CGV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/them-cum-rap",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"them-cum-rap"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật cụm rạp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_cum_rap\": 148,\r\n    \"ten_cum_rap\": \"Rio Đà Nẵng\",\r\n    \"dia_chi\": \"403 Tôn Đức Thắng - P. Hòa Minh - Q.Liên Chiểu - TP. Đà Nẵng\",\r\n    \"ma_he_thong_rap\": \"CGV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/cap-nhat-cum-rap",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"cap-nhat-cum-rap"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "thêm rạp phim",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_rap\": \"Rạp 5\",\r\n    \"ma_cum_rap\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/them-rap-phim",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"them-rap-phim"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật rạp phim",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_rap\": 507,\r\n    \"ten_rap\": \"Rạp 8\",\r\n    \"ma_cum_rap\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/cap-nhat-rap-phim",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"cap-nhat-rap-phim"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "thêm ghế theo mã rạp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/them-ghe?soHangDoc=5&chuCaiHangNgang=10&maRap=502",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"them-ghe"
+							],
+							"query": [
+								{
+									"key": "soHangDoc",
+									"value": "5"
+								},
+								{
+									"key": "chuCaiHangNgang",
+									"value": "10"
+								},
+								{
+									"key": "maRap",
+									"value": "502"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xóa ghế theo mã rạp",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/quan-ly-rap/xoa-ghe?maRap=505",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"quan-ly-rap",
+								"xoa-ghe"
+							],
+							"query": [
+								{
+									"key": "maRap",
+									"value": "505"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:9090",
+			"type": "string"
+		}
+	]
+}
