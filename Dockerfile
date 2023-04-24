@@ -14,4 +14,4 @@ RUN yarn run build
 
 EXPOSE 9090
 
-CMD ["node", "run", "start:prod"]
+CMD ["yarn", "run", "start:prod"]
